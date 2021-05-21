@@ -1,0 +1,70 @@
+.burger-button {
+  width: 40px;
+  height: 30px;
+  background: $white;
+  border-radius: 5px;
+  border: 2px solid rgba($black, 0.5);
+  position: relative;
+
+  span {
+    display: inline-block;
+    position: absolute;
+    width: 26px;
+    height: 2px;
+    background: rgba($black, 0.5);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6px;
+    border-radius: 50px;
+    transition: 0.3s;
+
+    &:nth-child(2) {
+      top: 13px;
+    }
+
+    &:nth-child(3) {
+      top: 19px;
+    }
+  }
+
+  &:hover {
+    span {
+      &:nth-child(2) {
+        width: 16px;
+      }
+
+      &:nth-child(3) {
+        width: 10px;
+      }
+    }
+  }
+
+  &.active {
+    border-color: $brand-color-two;
+    span {
+      left: 46%;
+      border-radius: 50%;
+      background-color: $brand-color-two;
+
+      &:nth-child(1) {
+        top: 3px;
+        transform: rotate(-218deg) translateX(15px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: 21px;
+        transform: rotate(-145deg) translateX(15px);
+      }
+    }
+
+    &:hover {
+      span {
+        width: 26px;
+      }
+    }
+  }
+}

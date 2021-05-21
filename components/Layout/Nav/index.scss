@@ -1,0 +1,99 @@
+.main-nav {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: $brand-color-two;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: 0.3s;
+  @include media-breakpoint-up(sm) {
+    top: 100px;
+  }
+  @include media-breakpoint-up(lg) {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    background: transparent;
+    display: none;
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .list-item {
+      padding: 0 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: 0.3s;
+      @include media-breakpoint-up(lg) {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+
+      .item-link {
+        padding: 15px 5px;
+        text-transform: uppercase;
+        color: $brand-color-one;
+
+        &:hover {
+          color: $white;
+          @include media-breakpoint-up(lg) {
+            color: $brand-color-two;
+          }
+
+          &:before {
+            background-color: $white;
+            @include media-breakpoint-up(lg) {
+              background-color: $brand-color-two;
+            }
+          }
+        }
+
+        &:before {
+          bottom: 15px;
+        }
+      }
+    }
+
+
+    @for $i from 1 to 10 {
+      .list-item:nth-child(#{$i}) {
+        transition-delay: $i * 0.10s;
+      }
+    }
+  }
+
+  &.desktop {
+    display: none;
+    @include media-breakpoint-up(lg) {
+      display: flex;
+    }
+  }
+
+  &.active {
+    transform: translateX(0);
+
+    .nav-list {
+      .list-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
