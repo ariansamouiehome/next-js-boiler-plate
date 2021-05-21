@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import '../styles/app.scss'
-import Header from "../components/Layout/Header";
-import Footer from "../components/Layout/Footer";
+import 'styles/app.scss'
+import Header from "components/Layout/Header";
+import Footer from "components/Layout/Footer";
 
 const MyApp = ({Component, pageProps}) => {
 
