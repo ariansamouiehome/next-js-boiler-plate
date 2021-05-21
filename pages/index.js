@@ -1,5 +1,5 @@
 import React from 'react';
-import PageComponents from '../containers/Home';
+import PageComponents from 'containers/Home';
 const axios = require('axios');
 
 const Page = (props) => {

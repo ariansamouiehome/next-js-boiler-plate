@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link'
 import {Col, Container, Row} from "reactstrap";
-import Nav from "../Nav";
-import BurgerButton from "../../Elements/BurgerButton";
+import Nav from "components/Layout/Nav";
+import BurgerButton from "components/Elements/BurgerButton";
 
 const Header = (props) => {
 
