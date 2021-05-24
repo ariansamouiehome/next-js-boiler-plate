@@ -8,5 +8,6 @@
             "public/*": ["public/*"],
             "styles/*": ["styles/*"]
         }
-    }
+    },
+    "exclude": ["node_modules"]
 }
