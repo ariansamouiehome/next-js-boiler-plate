@@ -12,6 +12,8 @@
   }
 
   .list-wrapper-each {
+    display: flex;
+    justify-content: center;
     animation-name: fadeUp;
     animation-fill-mode: both;
     animation-duration: 0.5s;
