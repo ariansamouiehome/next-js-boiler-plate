@@ -10,3 +10,8 @@ yarn
 
 yarn dev
 ```
+
+To run all tests and check code coverage:
+```bash
+yarn test
+```
