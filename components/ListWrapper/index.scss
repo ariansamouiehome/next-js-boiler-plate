@@ -1,0 +1,27 @@
+.list-wrapper {
+  padding: 15px;
+  max-width: 1140px;
+  @include media-breakpoint-up(md) {
+    padding: 30px 15px;
+  }
+
+  .list-wrapper-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .list-wrapper-each {
+    display: flex;
+    justify-content: center;
+    animation-name: fadeUp;
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+  }
+
+  @for $i from 1 to 10 {
+    .list-wrapper-each:nth-child(#{$i}) {
+      animation-delay: $i * 0.05s;
+    }
+  }
+}

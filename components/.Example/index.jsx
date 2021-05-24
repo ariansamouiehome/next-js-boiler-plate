@@ -1,5 +1,6 @@
 import React from 'react';
 import BurgerButton from "components/Elements/BurgerButton";
+import {Col, Container, Row} from "reactstrap";
 
 const ExampleComponent = ({ data, showAnotherBurgerButton }) => {
 
@@ -27,6 +28,14 @@ const ExampleComponent = ({ data, showAnotherBurgerButton }) => {
 
             <BurgerButton />
             {showAnotherBurgerButton && <BurgerButton />}
+
+            <Container>
+                <Row>
+                    <Col xs={12}>
+                        Example
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }

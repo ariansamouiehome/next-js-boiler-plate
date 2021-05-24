@@ -1,44 +1,35 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
+import ListWrapper from "components/ListWrapper";
 
-const axios = require('axios');
-import {Col, Container, Row} from "reactstrap";
+const Home = () => {
 
-const Home = (props) => {
+    const Item = [
+        <div>First item card</div>,
+        <div>item card</div>,
+        <div>item card</div>,
+        <div>item card</div>,
+        <div>item card</div>,
+        <div>item card</div>,
+        <div>item card</div>,
+        <div>item card</div>,
+        <div>item card</div>,
+    ];
 
-    console.log(props);
-
-    // States
-    const [loading, setLoading] = useState(true);
-    const [data, setData] = useState([]);
-
-    // Functions
-    const fetchData = () => {
-        axios.get('https://pokeapi.co/api/v2/pokemon')
-            .then(function (response) {
-                setData(response.data.results);
-                setLoading(false);
-                console.log(response);
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-    }
+    const [loading, setLoading] = React.useState(true);
 
     useEffect(() => {
-        // fetchData();
-    }, []);
+        setTimeout(() =>{
+            setLoading(false);
+        },1500);
+    },[]);
 
     return (
-        <Container>
-            <Row>
-                {/*<Col xs={12} md={6}>*/}
-                {/*    {!loading && <ul>*/}
-                {/*        {data.map((item, key) => <li key={`list-key-${key}`}>{item.name}</li>)}*/}
-                {/*    </ul>}*/}
-                {/*</Col>*/}
-            </Row>
-        </Container>
+        <>
+            <ListWrapper
+                loadingState={loading}
+                listWrapperItems={Item}
+            />
+        </>
     )
 }
 

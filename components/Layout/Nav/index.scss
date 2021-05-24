@@ -9,6 +9,7 @@
   justify-content: center;
   transform: translateX(100%);
   transition: 0.3s;
+  z-index: 1000;
   @include media-breakpoint-up(sm) {
     top: 100px;
   }
@@ -21,6 +22,7 @@
     background: transparent;
     display: none;
     transform: translateX(0);
+    z-index: 1;
   }
 
   .nav-list {
@@ -58,8 +60,9 @@
           }
 
           &:before {
-            background-color: $white;
+            display: none;
             @include media-breakpoint-up(lg) {
+              display: block;
               background-color: $brand-color-two;
             }
           }

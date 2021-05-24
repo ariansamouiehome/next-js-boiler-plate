@@ -1,9 +1,16 @@
 import React from 'react';
+import {Col, Container, Row} from "reactstrap";
 
 const Footer = () => {
     return (
         <footer className="main-footer">
-            Footer
+            <Container>
+                <Row>
+                    <Col xs={12} >
+                        Footer
+                    </Col>
+                </Row>
+            </Container>
         </footer>
     )
 }
