@@ -1,7 +1,7 @@
 
 ## Getting Started
 
-Jen is a massive slackers. 100 %
+Jen is a massive slacker. 100%
 
 After cloning project run:
 
