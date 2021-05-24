@@ -1,5 +1,8 @@
 body {
-
+  padding-top: 70px;
+  @include media-breakpoint-up(sm) {
+    padding-top: 100px;
+  }
 }
 
 .clickable {
@@ -36,4 +39,16 @@ body {
   @include media-breakpoint-up(xs) {
 
   }
+}
+
+@for $i from 1 to 10 {
+  .example-loop-item:nth-child(#{$i}) {
+    transition-delay: $i * 0.10s;
+  }
+}
+
+.example-animation {
+  animation-name: fadeUp;
+  animation-fill-mode: both;
+  animation-duration: 0.5s;
 }
