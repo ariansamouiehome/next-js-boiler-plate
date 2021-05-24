@@ -1,7 +1,7 @@
 
 ## Getting Started
 
-Arian, Abu, and Adam are slackers. 100 %
+Jen is a massive slackers. 100 %
 
 After cloning project run:
 
