@@ -6,7 +6,7 @@ const ListWrapper = (props) => {
 
     // Props Info
     // listWrapperItems should be an array of the components
-    // If no loading state then set loadingState prop to false
+    // If no loading state then remove prop
     // loadingHeight determines the height of the wrapper that the loader sits in. 400 by default
 
     const {listWrapperItems, loadingState, loadingHeight} = props;
