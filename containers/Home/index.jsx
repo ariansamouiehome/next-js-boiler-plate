@@ -1,34 +1,12 @@
-import React, {useEffect} from 'react';
-import ListWrapper from "components/ListWrapper";
+import React from 'react';
 
-const Home = () => {
+const Home = (props) => {
 
-    const Item = [
-        <div>First item card</div>,
-        <div>item card</div>,
-        <div>item card</div>,
-        <div>item card</div>,
-        <div>item card</div>,
-        <div>item card</div>,
-        <div>item card</div>,
-        <div>item card</div>,
-        <div>item card</div>,
-    ];
-
-    const [loading, setLoading] = React.useState(true);
-
-    useEffect(() => {
-        setTimeout(() =>{
-            setLoading(false);
-        },1500);
-    },[]);
+    console.log(props);
 
     return (
         <>
-            <ListWrapper
-                loadingState={loading}
-                listWrapperItems={Item}
-            />
+            <h1>Home Page</h1>
         </>
     )
 }

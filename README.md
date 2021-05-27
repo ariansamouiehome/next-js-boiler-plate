@@ -15,3 +15,9 @@ To run all tests and check code coverage:
 ```bash
 yarn test
 ```
+
+Contentful api information:
+```bash
+copy .env-example 
+rename .env
+```

@@ -19,7 +19,7 @@
     animation-duration: 0.5s;
   }
 
-  @for $i from 1 to 10 {
+  @for $i from 1 to 30 {
     .list-wrapper-each:nth-child(#{$i}) {
       animation-delay: $i * 0.05s;
     }
