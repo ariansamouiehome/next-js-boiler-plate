@@ -51,7 +51,10 @@
       .item-link {
         padding: 15px 5px;
         text-transform: uppercase;
-        color: $brand-color-one;
+        color: $black;
+        &:before {
+          background-color: $brand-color-two;
+        }
 
         &:hover {
           color: $white;
@@ -63,7 +66,6 @@
             display: none;
             @include media-breakpoint-up(lg) {
               display: block;
-              background-color: $brand-color-two;
             }
           }
         }
