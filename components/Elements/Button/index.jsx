@@ -3,12 +3,15 @@ import Link from 'next/link';
 
 const Button = (props) => {
 
-    const {onCLick, className, style, link, href} = props;
+    const {onClick, className, style, href} = props;
 
-    if(link) {
+    if(href) {
         return (
             <Link href={href}>
-                <a className={`theme-button ${className ? className : ''}`}>
+                <a
+                    className={`theme-button ${className ? className : ''}`}
+                    onClick={onClick}
+                >
                     {props.children}
                 </a>
             </Link>
@@ -16,7 +19,7 @@ const Button = (props) => {
     } else {
         return (
             <button
-                onClick={onCLick}
+                onClick={onClick}
                 style={style}
                 className={`theme-button ${className ? className : ''}`}
             >
