@@ -1,7 +1,7 @@
 .theme-button {
   display: inline-flex;
   position: relative;
-  padding: 10px 15px;
+  padding: 10px 35px;
   border-radius: 5px;
   border: 1px solid $black;
   background: $brand-color-one;
@@ -9,43 +9,41 @@
   text-decoration: none;
   transition: 0.5s;
   overflow: hidden;
-  z-index: 0;
 
   &:before,
   &:after {
     display: block;
     content: '';
     position: absolute;
-    width: 50%;
+    width: 150px;
     height: 30px;
     background: $brand-color-two;
     top: 50%;
     transition: 0.3s;
-    z-index: -1;
   }
 
   &:before {
     left: 0;
-    transform: translateY(-50%) translateX(-110%);
+    transform: translateY(-50%) translateX(-110%) rotate(-60deg);
   }
 
   &:after {
     right: 0;
-    transform: translateY(-50%) translateX(110%);
+    transform: translateY(-50%) translateX(110%) rotate(-60deg);
   }
 
   &:hover {
     text-decoration: none;
     background: $white;
-    color: $white;
+    color: $brand-color-two;
     border-color: $brand-color-two;
 
     &:before {
-      transform: translateY(-50%) translateX(0);
+      transform: translateY(-50%) translateX(-50%) rotate(-60deg);
     }
 
     &:after {
-      transform: translateY(-50%) translateX(0);
+      transform: translateY(-50%) translateX(50%) rotate(-60deg);
     }
   }
 }
