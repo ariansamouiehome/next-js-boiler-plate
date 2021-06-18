@@ -5,6 +5,22 @@ body {
   }
 }
 
+.heading-one {
+  font-size: 45px;
+  margin: 0 0 20px;
+  @include media-breakpoint-up(sm) {
+    font-size: 55px;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 65px;
+  }
+}
+
+.body-copy {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
 .clickable {
   position: relative;
   display: flex;

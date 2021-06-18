@@ -6,6 +6,7 @@
   display: flex;
   border-bottom: 1px solid rgba($black, 0.5);
   background: $white;
+  z-index: 100;
 
   .container {
     max-width: 1320px;

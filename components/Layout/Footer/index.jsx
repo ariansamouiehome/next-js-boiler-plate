@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="main-footer">
             <Container>
                 <Row>
-                    <Col xs={12} >
+                    <Col xs={12} style={{marginBottom: 400}}>
                         Footer
                     </Col>
                 </Row>
