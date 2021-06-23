@@ -61,10 +61,10 @@
     }
 
     .body-copy {
-      animation-name: fadeIn;
+      animation-name: fadeUp;
       animation-fill-mode: both;
-      animation-duration: 2s;
-      animation-delay: 1s;
+      animation-duration: 1s;
+      animation-delay: 0.7s;
       color: rgba($black, 0.7);
     }
 
