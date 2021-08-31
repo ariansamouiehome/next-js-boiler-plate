@@ -1,5 +1,4 @@
-export default function (req, res) {
-    console.log(process.env.FORM_EMAIL);
+export default async (req, res) => {
     let nodemailer = require('nodemailer')
     require('dotenv').config()
     const transporter = nodemailer.createTransport({
@@ -19,11 +18,10 @@ export default function (req, res) {
         html: `<div>${req.body.message}</div><p>Sent from:
     ${req.body.email}</p>`
     }
-    transporter.sendMail(mailData, function (err, info) {
-        if(err)
-            console.log(err)
-        else
-            console.log(info)
-    })
-    res.status(200)
+    try {
+        const emailResponse = await transporter.sendMail(mailData);
+        return res.status(200).json({ emailResponse });
+    } catch (err) {
+        return res.status(500).json(err || { error: 'ERROR' });
+    }
 }
