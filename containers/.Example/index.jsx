@@ -29,13 +29,12 @@ const Example = (props) => {
     }, []);
 
     //SEND EMAILS
-    const form = {
-        name: 'Arian',
-        email: 'Testing this shiiiiiiit',
-        message: 'GG'
-    }
-
     const handleSubmit = () => {
+        const form = {
+            name: 'Arian',
+            email: 'Testing this shiiiiiiit',
+            message: 'GG'
+        }
         axios.post('/api/contact', form)
             .then(data => console.log(data))
             .catch(err => console.log(err))

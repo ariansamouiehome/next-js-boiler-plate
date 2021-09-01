@@ -68,13 +68,12 @@ const Home = (props) => {
         },
     ]
 
-    const form = {
-        name: 'NextJS Boilerplate',
-        email: 'abubakr.anwar@nbrown.co.uk',
-        message: '<div>Hi I have been sent from the nextjs boilerplate created by people</div>'
-    }
-
     const handleSubmit = () => {
+        const form = {
+            name: 'NextJS Boilerplate',
+            email: 'abubakr.anwar@nbrown.co.uk',
+            message: '<div>Hi I have been sent from the nextjs boilerplate created by people</div>'
+        }
         axios.post('/api/contact', form)
             .then(data => console.log(data))
             .catch(err => console.log(err))
