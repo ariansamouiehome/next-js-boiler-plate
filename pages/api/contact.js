@@ -12,12 +12,12 @@ export default async (req, res) => {
     })
     const mailData = {
         from: process.env.FORM_EMAIL,
-        to: 'abubakr.anwar@nbrown.co.uk',
+        to: req.body.email,
         subject: `Message From ${req.body.name}`,
-        text: req.body.message + " | Sent from: " + req.body.email,
-        html: `<div>${req.body.message}</div><p>Sent from:
-    ${req.body.email}</p>`
+        text: req.body.message + " | Sent from: " + process.env.FORM_EMAIL,
+        html: req.body.message
     }
+
     try {
         const emailResponse = await transporter.sendMail(mailData);
         return res.status(200).json({ emailResponse });

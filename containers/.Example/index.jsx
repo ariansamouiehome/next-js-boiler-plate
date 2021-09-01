@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
-
-const axios = require('axios');
-import {Col, Container, Row} from "reactstrap";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Col, Container, Row } from "reactstrap";
 
 const Example = (props) => {
 
@@ -29,6 +28,18 @@ const Example = (props) => {
         fetchData();
     }, []);
 
+    //SEND EMAILS
+    const form = {
+        name: 'Arian',
+        email: 'Testing this shiiiiiiit',
+        message: 'GG'
+    }
+
+    const handleSubmit = () => {
+        axios.post('/api/contact', form)
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
+    }
 
     return (
         <>

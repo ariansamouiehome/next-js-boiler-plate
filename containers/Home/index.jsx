@@ -1,6 +1,9 @@
-import React ,{useState} from 'react';
+import React from 'react';
 import FullWidthImageTextBanner from "components/FullWidthImageTextBanner";
 import ColumnInfoImage from "components/ColumnInfoImage";
+import axios from 'axios';
+import Button from 'components/Elements/Button';
+import { Col, Container, Row } from "reactstrap";
 
 const Home = (props) => {
 
@@ -8,7 +11,7 @@ const Home = (props) => {
 
     const columnInfoImage = [
         {
-            title:'This is a title',
+            title: 'This is a title',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos harum qui soluta temporibus',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
             cta_text: 'Find out more',
@@ -16,7 +19,7 @@ const Home = (props) => {
             cta_onClick: () => console.log('clicked'),
         },
         {
-            title:'Another title',
+            title: 'Another title',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos ',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
             cta_text: 'Find out more',
@@ -24,7 +27,7 @@ const Home = (props) => {
             cta_onClick: () => console.log('clicked'),
         },
         {
-            title:'Third one',
+            title: 'Third one',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
             cta_text: 'Find out more',
@@ -32,7 +35,7 @@ const Home = (props) => {
             cta_onClick: () => console.log('clicked'),
         },
         {
-            title:'lets have another',
+            title: 'lets have another',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos harum qui soluta temporibus',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
             cta_text: 'Find out more',
@@ -40,7 +43,7 @@ const Home = (props) => {
             cta_onClick: () => console.log('clicked'),
         },
         {
-            title:'Another title',
+            title: 'Another title',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos ',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
             cta_text: 'Find out more',
@@ -48,7 +51,7 @@ const Home = (props) => {
             cta_onClick: () => console.log('clicked'),
         },
         {
-            title:'Third one',
+            title: 'Third one',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
             cta_text: 'Find out more',
@@ -56,7 +59,7 @@ const Home = (props) => {
             cta_onClick: () => console.log('clicked'),
         },
         {
-            title:'lets have another',
+            title: 'lets have another',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos harum qui soluta temporibus',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
             cta_text: 'Find out more',
@@ -66,23 +69,16 @@ const Home = (props) => {
     ]
 
     const form = {
-        name: 'Arian',
-        email: 'sadfsaf',
-        message: 'GG'
+        name: 'NextJS Boilerplate',
+        email: 'abubakr.anwar@nbrown.co.uk',
+        message: '<div>Hi I have been sent from the nextjs boilerplate created by people</div>'
     }
 
     const handleSubmit = () => {
-        fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(form)
-        })
+        axios.post('/api/contact', form)
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
     }
-
-
 
     return (
         <>
@@ -93,8 +89,8 @@ const Home = (props) => {
                 // href="/"
                 cta_text="Find out more"
                 onClick={() => console.log('clicked')}
-                // contentCenter
-                // contentRight
+            // contentCenter
+            // contentRight
             />
 
             <ColumnInfoImage
@@ -103,9 +99,13 @@ const Home = (props) => {
                 data={columnInfoImage}
             />
 
-            <button onClick={handleSubmit}>Send mail</button>
-
-
+            <Container>
+                <Row>
+                    <Col style={{ textAlign: 'center' }} xs={12}>
+                        <Button style={{ backgroundColor: '#80e7ff' }} onClick={handleSubmit}>Send mail</Button>
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }
