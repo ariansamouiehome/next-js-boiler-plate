@@ -1,6 +1,5 @@
 export default async (req, res) => {
     let nodemailer = require('nodemailer')
-    require('dotenv').config()
     const transporter = nodemailer.createTransport({
         port: 465,
         host: "smtp.gmail.com",
@@ -12,8 +11,8 @@ export default async (req, res) => {
     })
     const mailData = {
         from: process.env.FORM_EMAIL,
-        to: req.body.email,
-        subject: `Message From ${req.body.name}`,
+        to: 'ariansamouiecoach@gmail.com',
+        subject: `${req.body.name} - ${req.body.email}`,
         text: req.body.message + " | Sent from: " + process.env.FORM_EMAIL,
         html: req.body.message
     }

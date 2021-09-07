@@ -70,9 +70,9 @@ const Home = (props) => {
 
     const handleSubmit = () => {
         const form = {
-            name: 'NextJS Boilerplate',
+            name: 'Abu The Legend',
             email: 'abubakr.anwar@nbrown.co.uk',
-            message: '<div>Hi I have been sent from the nextjs boilerplate created by people</div>'
+            message: 'Hi I have been sent from the nextjs boilerplate created by people'
         }
         axios.post('/api/contact', form)
             .then(data => console.log(data))
