@@ -13,7 +13,7 @@ export default async (req, res) => {
         from: process.env.FORM_EMAIL,
         to: 'ariansamouiecoach@gmail.com',
         subject: `${req.body.name} - ${req.body.email}`,
-        text: req.body.message + " | Sent from: " + process.env.FORM_EMAIL,
+        text: req.body.message + " | Sent from: " + req.body.email,
         html: req.body.message
     }
 

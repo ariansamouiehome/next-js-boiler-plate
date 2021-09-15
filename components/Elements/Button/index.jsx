@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import Loader from "components/Elements/Loader";
 
 const Button = (props) => {
 
-    const {onClick, className, style, href, type} = props;
+    const {onClick, className, style, href, type, loading} = props;
 
     if(href) {
         return (
@@ -22,9 +23,9 @@ const Button = (props) => {
                 onClick={onClick}
                 style={style}
                 type={type}
-                className={`theme-button ${className ? className : ''}`}
+                className={`theme-button ${className ? className : ''} ${loading ? 'loading' : ''}`}
             >
-                {props.children}
+                {loading ? <Loader button/> : props.children}
             </button>
         )
     }

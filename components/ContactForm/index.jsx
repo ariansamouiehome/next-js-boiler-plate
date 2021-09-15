@@ -3,14 +3,16 @@ import {Col, Container, Row} from "reactstrap";
 import axios from "axios";
 import FormInput from "components/Elements/FormInput";
 import Button from "components/Elements/Button";
-import Loader from "components/Elements/Loader";
+import AlertMessage from "components/AlertMessage";
 
-const ContactForm = (props) => {
+const ContactForm = () => {
 
     // State
     const [checkError, setCheckError] = useState(false);
     const [errorActive, setErrorActive] = useState(false);
-    const [failedToSend, setFailedToSend] = useState(false);
+    const [failedToSend, setFailedToSend] = useState(true);
+    const [success, setSuccess] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         first_name: '',
@@ -53,32 +55,62 @@ const ContactForm = (props) => {
             name: 'email',
             type: 'email',
             label: 'Email',
-            placeholder: 'email@gmail.com'
+            placeholder: 'adam.smith@gmail.com'
         }
     ];
 
     // Function
     const handleSubmit = (e) => {
         e.preventDefault();
+        setShowMessage(false)
         setFailedToSend(false);
         setLoading(false);
         setErrorActive(false);
+        setSuccess(false);
 
         if (checkError) {
             setLoading(true);
-            // axios.post('/api/contactAAA', form)
-            //     .then(data => {
-            //         setLoading(false);
-            //         console.log('success', data);
-            //     })
-            //     .catch(err => {
-            //         setLoading(false);
-            //         setFailedToSend(true);
-            //     })
+            axios.post('/api/contact', form)
+                .then(data => {
+                    setForm({
+                        first_name: '',
+                        last_name: '',
+                        telephone: '',
+                        email: '',
+                        message: ''
+                    })
+                    setShowMessage(true);
+                    setFailedToSend(false);
+                    setSuccess(true);
+                    setLoading(false);
+                    scrollToMessage();
+                    console.log(data);
+                })
+                .catch(err => {
+
+                    setShowMessage(true);
+                    setLoading(false);
+                    setSuccess(false);
+                    setFailedToSend(true);
+                    scrollToMessage();
+                    console.log(err)
+                })
         } else {
             setErrorActive(true);
 
         }
+    }
+
+    const scrollToMessage = () => {
+        const element = document.getElementById('contact-form-message');
+        const headerOffset = 70;
+        const elementPosition = element.getBoundingClientRect().top + document.documentElement.scrollTop;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
     }
 
     useEffect(() => {
@@ -93,8 +125,6 @@ const ContactForm = (props) => {
         }
     }, [form]);
 
-    console.log(checkError);
-
     return (
         <form onSubmit={(e) => handleSubmit(e)} className="contact-form-form">
             <Container className="contact-form" data-aos>
@@ -104,10 +134,12 @@ const ContactForm = (props) => {
                             form={item.form}
                             setForm={item.setForm}
                             name={item.name}
+                            value={item.name}
                             type={item.type}
                             label={item.label}
                             placeholder={item.placeholder}
                             errorActive={errorActive}
+                            loading={loading}
                         />
                     </Col>)}
                     <Col xs={12} className="contact-form-each-input">
@@ -115,22 +147,27 @@ const ContactForm = (props) => {
                             form={form}
                             setForm={setForm}
                             name="message"
+                            value="message"
                             type="textarea"
                             label="Message"
                             placeholder="Message"
                             errorActive={errorActive}
+                            loading={loading}
                         />
                     </Col>
                     <Col xs={12} className="contact-form-footer">
                         <Button
                             type="submit"
-                            className={loading && `loading`}
+                            loading={loading}
                         >
-                            {loading ? <Loader button/> : 'Submit'}
+                            Submit
                         </Button>
                     </Col>
-                    <Col xs={12} className="contact-form-footer">
-                        {failedToSend && 'failed to send'}
+                    <Col xs={12} className="contact-form-message" id="contact-form-message">
+                        {showMessage && <AlertMessage
+                            success={success}
+                            failed={failedToSend}
+                        />}
                     </Col>
                 </Row>
             </Container>

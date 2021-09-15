@@ -19,10 +19,16 @@
     transition: 0.5s;
     padding: 10px 15px;
     font-family: $brand-font-copy-one;
+    position: relative;
+
 
     &:focus {
       outline: none;
       border-color: $brand-color-one;
+    }
+
+    &.loading {
+      pointer-events: none;
     }
   }
 

@@ -1,0 +1,37 @@
+.alert-message {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  flex-direction: column;
+  border: 1px solid $brand-color-one;
+  box-shadow: 0 0 15px 3px $brand-color-one inset;
+  margin: 30px auto;
+  border-radius: 5px;
+  padding: 50px 15px;
+  width: 100%;
+  position: relative;
+
+  .alert-message-title {
+    color: $brand-color-one;
+    font-family: $brand-font-heading-one;
+    font-size: 38px;
+  }
+
+  .alert-message-body-copy {
+    color: $brand-white;
+    font-size: 20px;
+    font-family: $brand-font-copy-one;
+  }
+
+  &.failed {
+    border: 1px solid $warning;
+    box-shadow: 0 0 15px 3px $warning inset;
+    .alert-message-title {
+      color: $warning;
+      &:before {
+        background: $warning;
+      }
+    }
+  }
+}

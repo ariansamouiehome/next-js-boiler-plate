@@ -38,19 +38,19 @@ const ColumnInfoImage = (props) => {
     const hTagOutput = () => {
         if (hTag) {
             if (hTag === 1) {
-                return <h1 className="content-head-title">{title}</h1>
+                return <h1 className="`content-head-title heading-mark`">{title}</h1>
             }
             if (hTag === 3) {
-                return <h3 className="content-head-title">{title}</h3>
+                return <h3 className="content-head-title heading-mark">{title}</h3>
             }
             if (hTag === 4) {
-                return <h4 className="content-head-title">{title}</h4>
+                return <h4 className="content-head-title heading-mark">{title}</h4>
             }
             if (hTag === 5) {
-                return <h5 className="content-head-title">{title}</h5>
+                return <h5 className="content-head-title heading-mark">{title}</h5>
             }
         } else {
-            return <h2 className="content-head-title">{title}</h2>
+            return <h2 className="content-head-title heading-mark">{title}</h2>
         }
     }
 
@@ -60,7 +60,7 @@ const ColumnInfoImage = (props) => {
                 <Row>
                     <Col xs={12} className="inner-content-head">
                         {hTagOutput()}
-                        <p className="body-copy">{description}</p>
+                        <p className="body-copy" dangerouslySetInnerHTML={{ __html: description }} />
                     </Col>
                     {data?.map((item, key) => <Col xs={12} sm={6} md={4} lg={3} className={`inner-content-each ${item.cta_show ? '' : 'remove-bottom-padding'}`}
                                                   key={`column-info-image-data-key-${key}`}>

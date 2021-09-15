@@ -16,8 +16,8 @@ const Contact = () => {
 
             <ColumnInfoImage
                 alt
-                title="CONNECT WITH ME"
-                description="Fill out the form and tell me a little about yourself. What you are looking for and what some of your challenges are"
+                title="LETS CONNECT"
+                description={`Fill out the form and tell me a little about yourself. <br />What are you looking for and what are some of the challenges you face regularly?`}
             />
 
             <ContactForm />
