@@ -7,22 +7,23 @@ const Nav = (props) => {
 
     const navItems = [
         {
-            title: "About Us",
+            title: "Meet Arian",
             link: '/'
         },
         {
-            title: "Our services",
+            title: "Work with ARian",
             link: '/'
         },
         {
-            title: "Prices",
+            title: "Videos",
             link: '/'
         },
         {
             title: "Book a call",
-            link: '/'
+            link: 'contact/'
         },
     ]
+
     return (
         <nav className={`main-nav ${className ? className : ''} ${showNav ? 'active' : ''}`}>
             <ul className="nav-list">

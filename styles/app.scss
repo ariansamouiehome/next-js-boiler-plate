@@ -1,3 +1,17 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+
+
+
+
 // Utilities
 @import "~bootstrap/scss/bootstrap";
 @import "variables";
@@ -5,6 +19,9 @@
 @import "animations";
 
 // Layout
+@import "components/Layout/Header";
+@import "components/Layout/Nav";
+@import "components/Layout/Footer";
 
 // Elements
 @import "components/Elements/BurgerButton";
@@ -12,11 +29,9 @@
 @import "components/Elements/Button";
 
 // Components
-@import "components/Layout/Header";
-@import "components/Layout/Nav";
-@import "components/Layout/Footer";
 @import "components/ListWrapper";
 @import "components/FullWidthImageTextBanner";
 @import "components/ColumnInfoImage";
+@import "components/FullWidthVideoPlayer";
 
 // Pages

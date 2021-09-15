@@ -8,3 +8,10 @@ const client = createClient({
 export const getContentfulEntries = async (contentType) => {
     return await client.getEntries({content_type: contentType});
 }
+
+
+// This needs to be on the page where the call is being made:
+// export async function getStaticProps() {
+//     const res = await getContentfulEntries('homePage');
+//     return {props:{data:res.items}}
+// }

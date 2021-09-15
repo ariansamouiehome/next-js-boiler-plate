@@ -1,8 +1,5 @@
 body {
-  padding-top: 70px;
-  @include media-breakpoint-up(sm) {
-    padding-top: 100px;
-  }
+  background: $brand-black;
 }
 
 .heading-one {

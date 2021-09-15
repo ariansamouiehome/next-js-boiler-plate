@@ -5,11 +5,13 @@
   border-radius: 5px;
   border: 1px solid $black;
   background: $brand-color-one;
-  color: $white;
+  color: $brand-black;
   text-decoration: none;
   transition: 0.5s;
   overflow: hidden;
   text-align: center;
+  font-family: $brand-font-two;
+  text-transform: uppercase;
 
   &:before,
   &:after {
@@ -18,7 +20,7 @@
     position: absolute;
     width: 150px;
     height: 30px;
-    background: $brand-color-two;
+    background: $brand-color-one;
     top: 50%;
     transition: 0.3s;
   }
@@ -35,9 +37,9 @@
 
   &:hover {
     text-decoration: none;
-    background: $white;
-    color: $brand-color-two;
-    border-color: $brand-color-two;
+    background: $brand-black;
+    color: $white;
+    border-color: $brand-color-one;
 
     &:before {
       transform: translateY(-50%) translateX(-50%) rotate(-60deg);

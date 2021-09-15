@@ -1,4 +1,4 @@
-import PageComponents from 'containers/Home';
+import PageComponents from 'containers/Contact';
 
 const Page = (props) => {
     return (<PageComponents {...props} />)

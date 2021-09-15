@@ -1,10 +1,11 @@
 .burger-button {
   width: 40px;
   height: 30px;
-  background: $white;
+  background: $brand-color-one;
   border-radius: 5px;
   border: 2px solid rgba($black, 0.5);
   position: relative;
+  transition: 0.5s;
 
   span {
     display: inline-block;
@@ -40,11 +41,12 @@
   }
 
   &.active {
-    border-color: $brand-color-two;
+    border-color: $brand-color-one;
+    background: $brand-black;
     span {
       left: 46%;
       border-radius: 50%;
-      background-color: $brand-color-two;
+      background-color: $brand-color-one;
 
       &:nth-child(1) {
         top: 3px;

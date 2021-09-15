@@ -4,64 +4,34 @@ import ColumnInfoImage from "components/ColumnInfoImage";
 import axios from 'axios';
 import Button from 'components/Elements/Button';
 import { Col, Container, Row } from "reactstrap";
+import FullWidthVideoPlayer from "components/FullWidthVideoPlayer";
 
 const Home = (props) => {
 
-    console.log(props);
-
     const columnInfoImage = [
         {
-            title: 'This is a title',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos harum qui soluta temporibus',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
+            title: 'WHAT IS TRAUMA?',
+            description: 'The reason I am changing this text is to get rid of the latin on the website as Chrome loves to keep telling me to translate it',
+            image: 'images/icons/trauma.png',
+            cta_show: false,
             cta_text: 'Find out more',
             cta_href: '/',
             cta_onClick: () => console.log('clicked'),
         },
         {
-            title: 'Another title',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos ',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
+            title: 'HOW IT AFFECTS US',
+            description: 'The reason I am changing this text is to get rid of the latin on the website as Chrome loves to keep telling me to translate it',
+            image: 'images/icons/infection.png',
+            cta_show: false,
             cta_text: 'Find out more',
             // cta_href: '/',
             cta_onClick: () => console.log('clicked'),
         },
         {
-            title: 'Third one',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
-            cta_text: 'Find out more',
-            cta_href: '/',
-            cta_onClick: () => console.log('clicked'),
-        },
-        {
-            title: 'lets have another',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos harum qui soluta temporibus',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
-            cta_text: 'Find out more',
-            // cta_href: '/',
-            cta_onClick: () => console.log('clicked'),
-        },
-        {
-            title: 'Another title',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos ',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
-            cta_text: 'Find out more',
-            // cta_href: '/',
-            cta_onClick: () => console.log('clicked'),
-        },
-        {
-            title: 'Third one',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
-            cta_text: 'Find out more',
-            cta_href: '/',
-            cta_onClick: () => console.log('clicked'),
-        },
-        {
-            title: 'lets have another',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos harum qui soluta temporibus',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1200px-How_to_use_icon.svg.png',
+            title: 'HOW TO HEAL',
+            description: 'The reason I am changing this text is to get rid of the latin on the website as Chrome loves to keep telling me to translate it',
+            image: 'images/icons/heart.png',
+            cta_show: false,
             cta_text: 'Find out more',
             // cta_href: '/',
             cta_onClick: () => console.log('clicked'),
@@ -82,29 +52,27 @@ const Home = (props) => {
     return (
         <>
             <FullWidthImageTextBanner
-                title="Arian Samouie"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos harum qui soluta temporibus. Asperiores at doloribus laborum minima necessitatibus odio sint? Dolorem dolorum eaque in neque voluptatum!"
-                backgroundImage="https://joannamartin.com/wp-content/uploads/2016/04/top_header_bg.jpg"
+                title={`BECOME THE <br /> BEST YOU`}
+                description="The reason I am changing this text is to get rid of the latin on the website as Chrome loves to keep telling me to translate it"
+                backgroundImage="https://c.pxhere.com/images/b5/34/8ffebf573eafb155f46e10c0e507-1617158.jpg!d"
                 // href="/"
                 cta_text="Find out more"
                 onClick={() => console.log('clicked')}
-            // contentCenter
-            // contentRight
+                contentCenter
+                // contentRight
             />
 
             <ColumnInfoImage
-                title="What do we do?"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque ea eos harum qui soluta temporibus."
+                title="WHY IS IT A STRUGGLE?"
+                description="We will work towards finding out why things are the way they are. Once we find out the why, we are able to start healing from the core of that why in order to achieve resolution."
                 data={columnInfoImage}
             />
 
-            <Container>
-                <Row>
-                    <Col style={{ textAlign: 'center' }} xs={12}>
-                        <Button style={{ backgroundColor: '#80e7ff' }} onClick={handleSubmit}>Send mail</Button>
-                    </Col>
-                </Row>
-            </Container>
+            <FullWidthVideoPlayer
+                title="HOW IT ALL STARTED"
+                iframeSrc="https://www.youtube.com/embed/ac6nfXLYAok"
+                thumbnailImage="https://c.pxhere.com/images/b5/34/8ffebf573eafb155f46e10c0e507-1617158.jpg!d"
+            />
         </>
     )
 }

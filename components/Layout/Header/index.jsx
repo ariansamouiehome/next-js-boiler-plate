@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from 'next/link'
 import {Col, Container, Row} from "reactstrap";
 import Nav from "components/Layout/Nav";
@@ -6,19 +6,33 @@ import BurgerButton from "components/Elements/BurgerButton";
 
 const Header = (props) => {
 
+    // Data
     const {showNav, setShowNav} = props;
 
+    // States
+    const [headerScroll, setHeaderScroll] = useState(0);
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setHeaderScroll(window.scrollY);
+        });
+    }, []);
+
     return (<>
-        <header className="main-header">
+        <header className={`main-header ${headerScroll > 0 ? 'scroll-active' : ''}`}>
             <Container>
                 <Row>
                     <Col xs={12} className="main-header-inner">
                         <Link href="/">
                             <a className="header-logo">
-                                <img src="/images/vercel.svg" alt="brand logo" className="header-logo-image"/>
+                                <img src="/images/logo-single.png" alt="brand logo" className="header-logo-image"/>
                             </a>
                         </Link>
-                        <Nav className="desktop"/>
+                        <Nav
+                            showNav={showNav}
+                            setShowNav={setShowNav}
+                            className="desktop"
+                        />
                         <BurgerButton
                             activeState={showNav}
                             setState={setShowNav}

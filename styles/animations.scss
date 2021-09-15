@@ -18,6 +18,24 @@
   }
 }
 
+@keyframes roundBottom {
+  0% {
+    clip-path: ellipse(500% 100% at 50% 0);
+  }
+  100% {
+    clip-path: ellipse(200% 100% at 50% -25px);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes scaleOut {
   0% {
     transform: scale(1.05);

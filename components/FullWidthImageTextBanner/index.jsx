@@ -4,7 +4,18 @@ import Button from "components/Elements/Button";
 
 const FullWidthImageTextBanner = (props) => {
 
-    const {backgroundImage, hTag, title, description, href, cta_text, onClick, contentCenter, contentRight} = props;
+    const {
+        backgroundImage,
+        hTag,
+        title,
+        description,
+        href,
+        cta_text,
+        onClick,
+        contentCenter,
+        contentRight,
+        alt
+    } = props;
 
     const ctaOutput = () => {
         if (href) {
@@ -26,24 +37,25 @@ const FullWidthImageTextBanner = (props) => {
     const hTagOutput = () => {
         if (hTag) {
             if (hTag === 2) {
-                return <h2 className="content-title heading-one">{title}</h2>
+                return <h2 className="content-title heading-one" dangerouslySetInnerHTML={{ __html: title }} />
             }
             if (hTag === 3) {
-                return <h3 className="content-title heading-one">{title}</h3>
+                return <h3 className="content-title heading-one" dangerouslySetInnerHTML={{ __html: title }} />
             }
             if (hTag === 4) {
-                return <h4 className="content-title heading-one">{title}</h4>
+                return <h4 className="content-title heading-one" dangerouslySetInnerHTML={{ __html: title }} />
             }
             if (hTag === 5) {
-                return <h5 className="content-title heading-one">{title}</h5>
+                return <h5 className="content-title heading-one" dangerouslySetInnerHTML={{ __html: title }} />
             }
         } else {
-            return <h1 className="content-title heading-one">{title}</h1>
+            return <h1 className="content-title heading-one" dangerouslySetInnerHTML={{ __html: title }} />
         }
     }
 
     return (
-        <Container fluid className={`full-width-text-image-banner ${contentCenter ? 'content-center' : '' } ${contentRight ? 'content-right' : ''}`}>
+        <Container fluid
+                   className={`full-width-text-image-banner ${contentCenter ? 'content-center' : ''} ${contentRight ? 'content-right' : ''} ${alt ? 'alt' : ''}`}>
             <Container>
                 <Row>
                     <Col xs={12} className="inner-image" style={{backgroundImage: `url(${backgroundImage})`}}/>

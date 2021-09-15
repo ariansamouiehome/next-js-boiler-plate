@@ -14,22 +14,24 @@ const ColumnInfoImage = (props) => {
     //     cta_onClick: () => console.log('clicked'),
     // },
 
-    const {hTag, title, description, data} = props;
+    const {hTag, title, description, data, alt} = props;
 
     const ctaOutput = (item) => {
-        if (item.cta_href) {
-            return (
-                <Button
-                    href={item.cta_href}
-                    onClick={item.cta_onClick}
-                >{item.cta_text}</Button>
-            )
-        } else {
-            return (
-                <Button
-                    onClick={item.cta_onClick}
-                >{item.cta_text}</Button>
-            )
+        if (item.cta_show) {
+            if (item.cta_href) {
+                return (
+                    <Button
+                        href={item.cta_href}
+                        onClick={item.cta_onClick}
+                    >{item.cta_text}</Button>
+                )
+            } else {
+                return (
+                    <Button
+                        onClick={item.cta_onClick}
+                    >{item.cta_text}</Button>
+                )
+            }
         }
     }
 
@@ -53,22 +55,24 @@ const ColumnInfoImage = (props) => {
     }
 
     return (
-        <Container className="column-info-image" data-aos>
-            <Row>
-                <Col xs={12} className="inner-content-head">
-                    {hTagOutput()}
-                    <p className="body-copy">{description}</p>
-                </Col>
-                {data.map((item, key) => <Col xs={12} sm={6} md={4} lg={3} className="inner-content-each"
-                                              key={`column-info-image-data-key-${key}`}>
-                    <img src={item.image} alt="content image" className="inner-content-image"/>
-                    <h3 className="inner-content-heading">{item.title}</h3>
-                    <p className="body-copy">{item.description}</p>
-                    <div className="inner-content-each-footer">
-                        {ctaOutput(item)}
-                    </div>
-                </Col>)}
-            </Row>
+        <Container className={`column-info-image ${alt ? 'alt' : ''}`} fluid data-aos>
+            <Container className={data ? '' : 'no-data'}>
+                <Row>
+                    <Col xs={12} className="inner-content-head">
+                        {hTagOutput()}
+                        <p className="body-copy">{description}</p>
+                    </Col>
+                    {data?.map((item, key) => <Col xs={12} sm={6} md={4} lg={3} className={`inner-content-each ${item.cta_show ? '' : 'remove-bottom-padding'}`}
+                                                  key={`column-info-image-data-key-${key}`}>
+                        <img src={item.image} alt="content image" className="inner-content-image"/>
+                        <h3 className="inner-content-heading">{item.title}</h3>
+                        <p className="body-copy">{item.description}</p>
+                        <div className="inner-content-each-footer">
+                            {ctaOutput(item)}
+                        </div>
+                    </Col>)}
+                </Row>
+            </Container>
         </Container>
     )
 }

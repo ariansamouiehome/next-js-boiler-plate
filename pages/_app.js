@@ -16,6 +16,7 @@ const MyApp = ({Component, pageProps}) => {
         });
     }, []);
 
+
     return (
         <>
             <Header
