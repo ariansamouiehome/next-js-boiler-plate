@@ -6,19 +6,34 @@
   animation-name: fadeIn;
   animation-fill-mode: both;
   animation-duration: 0.5s;
+
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    margin: 8px;
+    border: 5px solid $brand-color-one;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: $brand-color-one transparent transparent transparent;
+  }
+
+  &.button {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-100%);
+
+    div {
+      border-color: $brand-black transparent transparent transparent;
+    }
+  }
 }
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 34px;
-  height: 34px;
-  margin: 8px;
-  border: 5px solid $brand-color-one;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: $brand-color-one transparent transparent transparent;
-}
+
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }

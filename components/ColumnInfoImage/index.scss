@@ -49,7 +49,7 @@
     .content-head-title {
       font-size: 26px;
       transition: 1s;
-      font-family: $brand-font-one;
+      font-family: $brand-font-heading-one;
       color: $white;
       text-align: center;
       word-spacing: 10px;
@@ -63,7 +63,7 @@
       transition-delay: 0.3s;
       max-width: 600px;
       text-align: center;
-      font-family: $brand-font-two;
+      font-family: $brand-font-copy-one;
       color: $brand-white;
     }
   }
@@ -84,7 +84,7 @@
 
     .inner-content-heading {
       font-size: 28px;
-      font-family: $brand-font-three;
+      font-family: $brand-font-heading-two;
       color: $white;
       text-align: center;
 
@@ -94,7 +94,7 @@
       text-align: center;
       max-width: 280px;
       margin: 0 auto 25px;
-      font-family: $brand-font-two;
+      font-family: $brand-font-copy-one;
       color: $brand-white;
     }
 

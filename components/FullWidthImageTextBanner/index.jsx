@@ -61,7 +61,7 @@ const FullWidthImageTextBanner = (props) => {
                     <Col xs={12} className="inner-image" style={{backgroundImage: `url(${backgroundImage})`}}/>
                     <Col xs={12} md={8} lg={6} className="inner-content">
                         {hTagOutput()}
-                        <p className="body-copy">{description}</p>
+                        {description && <p className="body-copy">{description}</p>}
                         {cta_text && ctaOutput()}
                     </Col>
                 </Row>

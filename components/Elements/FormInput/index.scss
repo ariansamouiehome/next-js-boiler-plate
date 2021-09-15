@@ -1,0 +1,68 @@
+.form-group {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 0 0 30px;
+
+  .form-group-label {
+    color: $brand-white;
+    font-size: 20px;
+    font-family: $brand-font-copy-one;
+    display: block;
+    margin: 0 0 10px;
+    transition: 0.5s;
+  }
+
+  .form-group-input {
+    border-radius: 5px;
+    border: 4px solid $brand-white;
+    transition: 0.5s;
+    padding: 10px 15px;
+    font-family: $brand-font-copy-one;
+
+    &:focus {
+      outline: none;
+      border-color: $brand-color-one;
+    }
+  }
+
+  .textarea {
+    min-height: 150px;
+  }
+
+  .form-group-error {
+    color: $warning;
+    font-size: 12px;
+    margin: 10px 0 0;
+    display: block;
+    font-family: $brand-font-copy-one;
+    text-transform: uppercase;
+  }
+
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $brand-grey;
+    font-family: $brand-font-copy-one;
+    font-size: 16px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $brand-grey;
+    font-family: $brand-font-copy-one;
+    font-size: 16px;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $brand-grey;
+    font-family: $brand-font-copy-one;
+    font-size: 16px;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $brand-grey;
+    font-family: $brand-font-copy-one;
+    font-size: 16px;
+  }
+
+  &.focus {
+    .form-group-label {
+      color: $brand-color-one;
+    }
+  }
+}

@@ -38,17 +38,6 @@ const Home = (props) => {
         },
     ]
 
-    const handleSubmit = () => {
-        const form = {
-            name: 'Abu The Legend',
-            email: 'abubakr.anwar@nbrown.co.uk',
-            message: 'Hi I have been sent from the nextjs boilerplate created by people'
-        }
-        axios.post('/api/contact', form)
-            .then(data => console.log(data))
-            .catch(err => console.log(err))
-    }
-
     return (
         <>
             <FullWidthImageTextBanner

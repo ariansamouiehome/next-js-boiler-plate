@@ -1,5 +1,5 @@
 .theme-button {
-  display: inline-flex;
+  display: block;
   position: relative;
   padding: 10px 35px;
   border-radius: 5px;
@@ -10,8 +10,10 @@
   transition: 0.5s;
   overflow: hidden;
   text-align: center;
-  font-family: $brand-font-two;
+  font-family: $brand-font-copy-one;
   text-transform: uppercase;
+  min-width: 130px;
+  min-height: 46px;
 
   &:before,
   &:after {
@@ -48,5 +50,10 @@
     &:after {
       transform: translateY(-50%) translateX(50%) rotate(-60deg);
     }
+  }
+
+  &.loading {
+    pointer-events: none;
+    background: rgba($brand-color-one, 0.5);
   }
 }

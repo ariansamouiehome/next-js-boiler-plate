@@ -1,13 +1,7 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
 
 
 
@@ -27,11 +21,13 @@
 @import "components/Elements/BurgerButton";
 @import "components/Elements/Loader";
 @import "components/Elements/Button";
+@import "components/Elements/FormInput";
 
 // Components
 @import "components/ListWrapper";
 @import "components/FullWidthImageTextBanner";
 @import "components/ColumnInfoImage";
 @import "components/FullWidthVideoPlayer";
+@import "components/ContactForm";
 
 // Pages

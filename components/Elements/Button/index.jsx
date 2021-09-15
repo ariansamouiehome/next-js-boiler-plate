@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Button = (props) => {
 
-    const {onClick, className, style, href} = props;
+    const {onClick, className, style, href, type} = props;
 
     if(href) {
         return (
@@ -21,6 +21,7 @@ const Button = (props) => {
             <button
                 onClick={onClick}
                 style={style}
+                type={type}
                 className={`theme-button ${className ? className : ''}`}
             >
                 {props.children}

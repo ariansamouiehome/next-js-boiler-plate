@@ -1,19 +1,28 @@
 // Colors
+// ------------------------------------------------
 $black: #000;
 $white: #fff;
 
 $brand-black: #121212;
 $brand-white: #F0F0F0;
+$brand-grey: #C8C8C8;
 
 $brand-color-one: #d2a94e;
 $brand-color-two: #FF5733;
 
-// Fonts
-$brand-font-one: 'Berkshire Swash', cursive;
-$brand-font-two: 'Akaya Telivigala', cursive;
-$brand-font-three: 'Oleo Script', cursive;
-$brand-font-four: 'Passion One', cursive;
+$warning: #FF1313;
 
+// Fonts
+// ------------------------------------------------
+
+// Heading
+$brand-font-heading-one: 'Berkshire Swash', cursive;
+$brand-font-heading-two: 'Akronim', cursive;
+
+// Copy
+$brand-font-copy-one: 'Akaya Telivigala', cursive;
+
+// ------------------------------------------------
 $grid-breakpoints: (
         xxs: 320px,
         xs: 568px,
