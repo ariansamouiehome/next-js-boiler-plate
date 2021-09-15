@@ -8,7 +8,7 @@ const Contact = () => {
     return (
         <>
             <FullWidthImageTextBanner
-                title="GET IN TOUCH"
+                title="LETS CONNECT"
                 backgroundImage="https://c.pxhere.com/images/b5/34/8ffebf573eafb155f46e10c0e507-1617158.jpg!d"
                 contentCenter
                 alt
@@ -16,7 +16,7 @@ const Contact = () => {
 
             <ColumnInfoImage
                 alt
-                title="LETS CONNECT"
+                title="GET IN TOUCH"
                 description={`Fill out the form and tell me a little about yourself. <br />What are you looking for and what are some of the challenges you face regularly?`}
             />
 

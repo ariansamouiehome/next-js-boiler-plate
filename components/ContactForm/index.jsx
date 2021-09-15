@@ -25,8 +25,6 @@ const ContactForm = () => {
     // Data
     const contactForm = [
         {
-            form: form,
-            setForm: setForm,
             name: 'first_name',
             type: 'text',
             label: 'First Name',
@@ -34,24 +32,18 @@ const ContactForm = () => {
             errorMessage: 'stop it'
         },
         {
-            form: form,
-            setForm: setForm,
             name: 'last_name',
             type: 'text',
             label: 'Last Name',
             placeholder: 'Smith'
         },
         {
-            form: form,
-            setForm: setForm,
             name: 'telephone',
             type: 'number',
             label: 'Telephone',
             placeholder: '***********'
         },
         {
-            form: form,
-            setForm: setForm,
             name: 'email',
             type: 'email',
             label: 'Email',
@@ -97,7 +89,6 @@ const ContactForm = () => {
                 })
         } else {
             setErrorActive(true);
-
         }
     }
 
@@ -131,8 +122,8 @@ const ContactForm = () => {
                 <Row>
                     {contactForm.map((item, key) => <Col xs={12} sm={6} className="contact-form-each-input">
                         <FormInput
-                            form={item.form}
-                            setForm={item.setForm}
+                            form={form}
+                            setForm={setForm}
                             name={item.name}
                             value={item.name}
                             type={item.type}

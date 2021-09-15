@@ -14,7 +14,7 @@ const ColumnInfoImage = (props) => {
     //     cta_onClick: () => console.log('clicked'),
     // },
 
-    const {hTag, title, description, data, alt} = props;
+    const {hTag, title, description, data, alt, headingLine} = props;
 
     const ctaOutput = (item) => {
         if (item.cta_show) {
@@ -38,19 +38,19 @@ const ColumnInfoImage = (props) => {
     const hTagOutput = () => {
         if (hTag) {
             if (hTag === 1) {
-                return <h1 className="`content-head-title heading-mark`">{title}</h1>
+                return <h1 className={`content-head-title ${headingLine ? 'heading-mark' : ''}`} dangerouslySetInnerHTML={{ __html: title }}/>
             }
             if (hTag === 3) {
-                return <h3 className="content-head-title heading-mark">{title}</h3>
+                return <h3 className={`content-head-title ${headingLine ? 'heading-mark' : ''}`} dangerouslySetInnerHTML={{ __html: title }}/>
             }
             if (hTag === 4) {
-                return <h4 className="content-head-title heading-mark">{title}</h4>
+                return <h4 className={`content-head-title ${headingLine ? 'heading-mark' : ''}`} dangerouslySetInnerHTML={{ __html: title }}/>
             }
             if (hTag === 5) {
-                return <h5 className="content-head-title heading-mark">{title}</h5>
+                return <h5 className={`content-head-title ${headingLine ? 'heading-mark' : ''}`} dangerouslySetInnerHTML={{ __html: title }}/>
             }
         } else {
-            return <h2 className="content-head-title heading-mark">{title}</h2>
+            return <h2 className={`content-head-title ${headingLine ? 'heading-mark' : ''}`} dangerouslySetInnerHTML={{ __html: title }}/>
         }
     }
 
