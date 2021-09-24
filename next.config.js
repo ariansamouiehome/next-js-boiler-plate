@@ -20,6 +20,7 @@ module.exports = withPlugins(
 
 module.exports = {
     /* Add Your Scss File Folder Path Here */
+    webpack5: false,
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },

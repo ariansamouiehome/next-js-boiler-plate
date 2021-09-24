@@ -1,35 +1,19 @@
 import React from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
+import {navItems} from "../../../utils/globalArrays";
+import {useRouter} from 'next/router';
 
 const Nav = (props) => {
 
     const {className, showNav, setShowNav} = props;
-
-    const navItems = [
-        {
-            title: "Meet Arian",
-            link: '/'
-        },
-        {
-            title: "Work with ARian",
-            link: '/'
-        },
-        {
-            title: "Videos",
-            link: '/'
-        },
-        {
-            title: "Book a call",
-            link: 'contact/'
-        },
-    ]
+    const router = useRouter();
 
     return (
         <nav className={`main-nav ${className ? className : ''} ${showNav ? 'active' : ''}`}>
             <ul className="nav-list">
                 {navItems.map((item, key) => <li className="list-item" key={`nav-key-${key}`}>
                     <Link href={item.link}>
-                        <a className="item-link clickable" onClick={() => setShowNav(false)}>
+                        <a className={`item-link clickable ${router.asPath === item.link ? 'active' : ''}`} onClick={() => setShowNav(false)}>
                             {item.title}
                         </a>
                     </Link>

@@ -4,13 +4,13 @@ import Loader from "components/Elements/Loader";
 
 const Button = (props) => {
 
-    const {onClick, className, style, href, type, loading} = props;
+    const {onClick, className, style, href, type, loading, secondary} = props;
 
     if(href) {
         return (
             <Link href={href}>
                 <a
-                    className={`theme-button ${className ? className : ''}`}
+                    className={`theme-button ${className ? className : ''} ${loading ? 'loading' : ''} ${secondary ? 'secondary' :''}`}
                     onClick={onClick}
                 >
                     {props.children}
@@ -23,7 +23,7 @@ const Button = (props) => {
                 onClick={onClick}
                 style={style}
                 type={type}
-                className={`theme-button ${className ? className : ''} ${loading ? 'loading' : ''}`}
+                className={`theme-button ${className ? className : ''} ${loading ? 'loading' : ''} ${secondary ? 'secondary' :''}`}
             >
                 {loading ? <Loader button/> : props.children}
             </button>

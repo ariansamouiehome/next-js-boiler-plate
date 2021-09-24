@@ -6,7 +6,7 @@ const FullWidthVideoPlayer = (props) => {
     const {title, hTag, iframeSrc, thumbnailImage} = props
 
     const [play, setPlay] = useState(false);
-    const src = play ? `${iframeSrc}?autoplay=1` : iframeSrc
+    const src = play ? `${iframeSrc}&autoplay=1` : iframeSrc
 
     const playVideo = () => {
         setPlay(true);

@@ -3,6 +3,7 @@ import 'styles/app.scss';
 import AOS from 'aos';
 import Header from "components/Layout/Header";
 import Footer from "components/Layout/Footer";
+import Router from 'next/router';
 
 const MyApp = ({Component, pageProps}) => {
 
@@ -15,6 +16,13 @@ const MyApp = ({Component, pageProps}) => {
             once: true
         });
     }, []);
+
+
+    Router.events.on('routeChangeComplete', () => {
+        // Starts new pages at the top of page
+        document.documentElement.style = "scroll-behavior: auto";
+        document.documentElement.scrollTo({ top: 0, behavior: 'auto' });
+    });
 
 
     return (

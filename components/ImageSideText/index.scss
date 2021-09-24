@@ -1,5 +1,5 @@
 .image-side-text {
-  border-top: 1px solid $brand-color-one;
+  //border-top: 1px solid $brand-color-one;
   position: relative;
   background: $brand-black;
   padding: 50px 15px;
@@ -31,6 +31,9 @@
     min-height: 150px;
     margin: 0 0 30px;
     box-shadow: 0 0 10px 1px $brand-black;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     @include media-breakpoint-up(xs) {
       min-height: 250px;
     }
@@ -66,6 +69,7 @@
     .content-title {
       color: $brand-white;
       font-size: 50px;
+      text-shadow: 5px 5px $brand-black;
       font-family: $brand-font-heading-one;
     }
 
@@ -74,6 +78,7 @@
       font-family: $brand-font-copy-one;
       font-size: 18px;
       margin: 0 0 50px;
+      text-shadow: 3px 3px $brand-black;
       @include media-breakpoint-up(lg) {
         margin: 0 0 30px;
       }

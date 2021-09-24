@@ -3,11 +3,13 @@ import Link from 'next/link'
 import {Col, Container, Row} from "reactstrap";
 import Nav from "components/Layout/Nav";
 import BurgerButton from "components/Elements/BurgerButton";
+import {useRouter} from "next/router";
 
 const Header = (props) => {
 
     // Data
     const {showNav, setShowNav} = props;
+    const router = useRouter();
 
     // States
     const [headerScroll, setHeaderScroll] = useState(0);
@@ -19,7 +21,7 @@ const Header = (props) => {
     }, []);
 
     return (<>
-        <header className={`main-header ${headerScroll > 0 ? 'scroll-active' : ''}`}>
+        <header className={`main-header ${headerScroll > 0 ? 'scroll-active' : ''} ${router.asPath === '/admin' ? 'admin' : ''}`}>
             <Container>
                 <Row>
                     <Col xs={12} className="main-header-inner">

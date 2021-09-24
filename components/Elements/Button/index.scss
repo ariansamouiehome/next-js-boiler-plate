@@ -14,6 +14,7 @@
   text-transform: uppercase;
   min-width: 130px;
   min-height: 46px;
+  text-shadow: 1px 1px rgba($brand-white, 0.5);
 
   &:before,
   &:after {
@@ -42,6 +43,8 @@
     background: $brand-black;
     color: $white;
     border-color: $brand-color-one;
+    text-shadow: 1px 1px rgba($brand-color-one, 0.5);
+    box-shadow: 0 0 10px 1px rgba($brand-color-one, 0.5) inset;
 
     &:before {
       transform: translateY(-50%) translateX(-50%) rotate(-60deg);
@@ -55,5 +58,24 @@
   &.loading {
     pointer-events: none;
     background: rgba($brand-color-one, 0.5);
+  }
+
+  &.secondary {
+    background: $brand-black;
+    color: $brand-white;
+    text-shadow: 1px 1px rgba($brand-color-one, 0.5);
+
+    &:before,
+    &:after {
+      background: $brand-black;
+    }
+
+    &:hover {
+      background: $brand-color-one;
+      border-color: $brand-black;
+      color: $brand-black;
+      text-shadow: 1px 1px rgba($brand-white, 0.5);
+      box-shadow: 0 0 7px 1px rgba($brand-black, 0.5) inset;
+    }
   }
 }

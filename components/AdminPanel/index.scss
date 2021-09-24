@@ -1,0 +1,117 @@
+.admin-panel {
+  background: $brand-color-one;
+  min-height: 100vh;
+
+  .admin-panel-nav {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    justify-content: center;
+    background: $brand-black;
+
+    .admin-logo {
+      display: flex;
+
+      .admin-logo-image {
+        height: 50px;
+        transition: 0.5s;
+      }
+
+      &:hover {
+        .admin-logo-image {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    .theme-button {
+      margin: 0 10px;
+    }
+
+    &.nav {
+      padding: 15px 15px 50px;
+    }
+  }
+
+  .admin-panel-login {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px 15px;
+    align-items: center;
+
+    .admin-login,
+    .admin-list {
+      background: $brand-black;
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      padding: 30px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      box-shadow: 0 0 10px 2px rgba($brand-black, 0.5);
+      animation-name: fadeUp;
+      animation-fill-mode: both;
+      animation-duration: 0.5s;
+      align-self: center;
+    }
+
+    .admin-list {
+      align-items: flex-start;
+      max-width: 1300px;
+      color: $brand-white;
+    }
+
+    .each-email-list {
+      width: 100%;
+      display: flex;
+      position: relative;
+      border: 1px solid $brand-color-one;
+      flex-direction: column;
+      border-radius: 10px;
+      margin: 0 0 25px;
+      padding: 15px;
+      box-shadow: 0 0 5px 3px rgba($brand-color-one, 0.5);
+      align-items: flex-start;
+
+      .top-two {
+        display: flex;
+        width: 100%;
+        position: relative;
+        justify-content: space-between;
+        flex-direction: column;
+        @include media-breakpoint-up(xs) {
+          flex-direction: row;
+        }
+      }
+
+      .each-name {
+        font-family: $brand-font-heading-one;
+      }
+
+      .each-tel {
+        color: $brand-color-one;
+      }
+
+      .each-email {
+        color: $brand-white;
+      }
+    }
+
+    .mailing-list-form-wrapper {
+      padding: 15px 15px 30px;
+      border-radius: 10px;
+      background: $brand-black;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}

@@ -2,9 +2,14 @@
   display: block;
   position: relative;
   width: 100%;
-  padding: 0 15px 30px;
+  padding: 0 0 30px;
+  margin: 0 0 40px;
+
+  @include media-breakpoint-up(xs) {
+    margin: 0 0 70px;
+  }
   @include media-breakpoint-up(lg) {
-    padding: 0 15px 50px;
+    padding: 0 0 50px;
   }
 }
 
@@ -12,6 +17,10 @@
   animation-name: fadeUp;
   animation-fill-mode: both;
   animation-duration: 0.5s;
+
+  @include media-breakpoint-down(lg) {
+    max-width: 900px;
+  }
   @include media-breakpoint-up(lg) {
     margin: 50px auto 0;
   }
@@ -20,16 +29,20 @@
   .contact-form-footer {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+
+    @include media-breakpoint-up(xs) {
+      flex-direction: row;
+    }
 
     .theme-button {
       width: 100%;
+      margin-top: 30px;
       @include media-breakpoint-up(xs) {
+        margin-top: 0;
         width: auto;
       }
     }
-  }
-
-  .contact-form-message {
-
   }
 }

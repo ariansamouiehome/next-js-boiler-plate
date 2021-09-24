@@ -99,6 +99,12 @@
         &:before {
           bottom: 15px;
         }
+
+        &.active {
+          &:before {
+            width: 90%;
+          }
+        }
       }
     }
 

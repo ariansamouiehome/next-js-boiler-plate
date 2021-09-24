@@ -12,7 +12,10 @@
     height: 100%;
     background: $brand-black;
     z-index: 1;
-    clip-path: ellipse(120% 100% at 50% -25px);
+    clip-path: ellipse(180% 100% at 50% -25px);
+    @include media-breakpoint-up(sm) {
+      clip-path: ellipse(120% 100% at 50% -25px);
+    }
   }
 
   .container {
@@ -47,13 +50,14 @@
     }
 
     .content-head-title {
-      font-size: 26px;
+      font-size: 32px;
       transition: 1s;
       font-family: $brand-font-heading-one;
       color: $white;
       text-align: center;
       word-spacing: 10px;
-      @include media-breakpoint-up(md) {
+      text-shadow: 1px 1px $brand-color-one;
+      @include media-breakpoint-up(xs) {
         font-size: 40px;
       }
     }
@@ -65,6 +69,7 @@
       text-align: center;
       font-family: $brand-font-copy-one;
       color: $brand-white;
+      text-shadow: 1px 1px rgba($brand-color-one, 0.5);
     }
   }
 
@@ -87,6 +92,7 @@
       font-family: $brand-font-heading-two;
       color: $white;
       text-align: center;
+      text-shadow: 1px 1px rgba($brand-color-one, 0.5);
 
     }
 
@@ -96,6 +102,7 @@
       margin: 0 auto 25px;
       font-family: $brand-font-copy-one;
       color: $brand-white;
+      text-shadow: 1px 1px rgba($brand-color-one, 0.5);
     }
 
     .inner-content-each-footer {
@@ -119,7 +126,7 @@
     }
   }
 
-  &.alt {
+  &.noCurve {
     background: $brand-black;
   }
 

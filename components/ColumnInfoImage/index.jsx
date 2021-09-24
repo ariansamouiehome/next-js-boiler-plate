@@ -14,7 +14,7 @@ const ColumnInfoImage = (props) => {
     //     cta_onClick: () => console.log('clicked'),
     // },
 
-    const {hTag, title, description, data, alt, headingLine} = props;
+    const {hTag, title, description, data, noCurve, headingLine} = props;
 
     const ctaOutput = (item) => {
         if (item.cta_show) {
@@ -55,14 +55,14 @@ const ColumnInfoImage = (props) => {
     }
 
     return (
-        <Container className={`column-info-image ${alt ? 'alt' : ''}`} fluid data-aos>
+        <Container className={`column-info-image ${noCurve ? 'noCurve' : ''}`} fluid data-aos>
             <Container className={data ? '' : 'no-data'}>
                 <Row>
                     <Col xs={12} className="inner-content-head">
                         {hTagOutput()}
                         <p className="body-copy" dangerouslySetInnerHTML={{ __html: description }} />
                     </Col>
-                    {data?.map((item, key) => <Col xs={12} sm={6} md={4} lg={3} className={`inner-content-each ${item.cta_show ? '' : 'remove-bottom-padding'}`}
+                    {data?.map((item, key) => <Col xs={12} sm={6} md={4} className={`inner-content-each ${item.cta_show ? '' : 'remove-bottom-padding'}`}
                                                   key={`column-info-image-data-key-${key}`}>
                         <img src={item.image} alt="content image" className="inner-content-image"/>
                         <h3 className="inner-content-heading">{item.title}</h3>

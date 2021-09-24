@@ -1,5 +1,6 @@
 body {
   background: $brand-black;
+  //-webkit-backface-visibility: hidden;
 }
 
 .heading-one {
@@ -39,11 +40,11 @@ body {
   }
 
   &:hover {
-    color: $brand-color-two;
+    color: $brand-white;
 
     &:before {
       width: 100%;
-      background-color: $brand-color-two;
+      background-color: $brand-color-one;
     }
   }
 }
@@ -63,6 +64,15 @@ body {
     height: 3px;
     border-radius: 50%;
     background: $brand-color-one;
+  }
+
+  &.mark-left {
+    &:before {
+      @include media-breakpoint-up(xs) {
+        left: 0;
+        transform: none;
+      }
+    }
   }
 }
 

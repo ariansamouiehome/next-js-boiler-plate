@@ -1,11 +1,12 @@
 import React from 'react';
-import PageComponents from 'containers/{PAGE}';
+// import PageComponents from 'containers/{PAGE}';
 import {getContentfulEntries} from 'utils/contentfulApi';
 
 const axios = require('axios');
 
 const Page = (props) => {
-    return (<PageComponents {...props}/>)
+    // return (<PageComponents {...props}/>)
+    return (<div />)
 }
 
 // ----------------------------
@@ -21,11 +22,11 @@ export async function getStaticProps() {
 }
 // ----------------------------
 // Server side api call
-Page.getInitialProps = async () => {
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
-    const pageData = await res.data.results;
-    return {data: pageData};
-};
+// Page.getInitialProps = async () => {
+//     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
+//     const pageData = await res.data.results;
+//     return {data: pageData};
+// };
 // ----------------------------
 
 export default Page;

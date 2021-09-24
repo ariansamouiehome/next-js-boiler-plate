@@ -7,7 +7,15 @@ const FormInput = (props) => {
     // States
     const [focus, setFocus] = useState(false);
 
-    return (<div className={`form-group ${focus ? 'focus' : ''}`}>
+    const checkboxOnchangeCondition = (e) => {
+        if (type === 'checkbox') {
+            setForm({...form, [name]: e.target.checked});
+        } else {
+            setForm({...form, [name]: e.target.value});
+        }
+    }
+
+    return (<div className={`form-group ${focus ? 'focus' : ''} ${type === 'checkbox' ? 'checkbox' : '' }`}>
         <label htmlFor={name} className="form-group-label">{label}</label>
         {type === 'textarea' ?
             <textarea
@@ -23,13 +31,15 @@ const FormInput = (props) => {
                 type={type}
                 id={name}
                 className={`form-group-input ${loading ? 'loading' : ''}`}
-                onChange={(e) => setForm({...form, [name]: e.target.value})}
+                onChange={(e) => checkboxOnchangeCondition(e)}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
                 placeholder={placeholder}
                 value={form[value]}
+                checked={type === 'checkbox' && form[value]}
             />
         }
+        {type === 'checkbox' && <label htmlFor={name} className="form-group-checkbox-label" />}
         {errorActive && form[name].length === 0 && <span className="form-group-error">Please fill out the {label} field</span>}
     </div>)
 }
