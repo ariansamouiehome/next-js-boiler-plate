@@ -6,7 +6,7 @@ import ImageSideText from "components/ImageSideText";
 
 const Home = () => {
 
-    // Data
+    // Data ss
     const columnInfoImage = [
         {
             title: 'WHAT IS TRAUMA?',
